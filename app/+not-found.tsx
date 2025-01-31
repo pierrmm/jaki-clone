@@ -1,32 +1,23 @@
-import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Text, Image } from 'react-native';
+import tw from 'twrnc';
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function NotFoundScreen() {
+export default function UnderConstructionScreen() {
   return (
-    <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This screen doesn't exist.</ThemedText>
-        <Link href="/" style={styles.link}>
-          <ThemedText type="link">Go to home screen!</ThemedText>
-        </Link>
-      </ThemedView>
-    </>
+    <View style={tw`flex-1 bg-white items-center justify-center p-4`}>
+      <Image
+        source={require('../assets/images/iconn.png')}
+        style={tw`w-64 h-64`}
+        resizeMode="contain"
+      />
+
+      <Text style={tw`text-xl font-bold text-[#1F2E5C] mt-6 text-center`}>
+        Mohon maaf, halaman sedang dalam perbaikan
+      </Text>
+
+      <Text style={tw`text-sm text-gray-600 mt-2 text-center`}>
+        nununk akan kembali melayanimu secepatnya, ya!
+      </Text>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-});

@@ -31,7 +31,15 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+        <Stack.Screen name="(tabs)/profile" options={{ headerTitle: 'Profile' }} />
+        <Stack.Screen name="+not-found" options={{ title: 'not found' }} />
+        <Stack.Screen name="project/jakwarta" options={{ headerTitle: 'JakWarta' }} />
+        <Stack.Screen name="project/jakrespons" options={{ headerTitle: 'JakRespons' }} />
+        <Stack.Screen name="project/jakpangan" options={{ headerTitle: 'JakPangan' }} />
+        <Stack.Screen name="project/jaklingko" options={{ headerTitle: 'JakLingko' }} />
+        <Stack.Screen name="project/jaksiaga" options={{ headerTitle: 'JakSiaga' }} />
+        <Stack.Screen name="project/jakemisi" options={{ headerTitle: 'JakEmisi' }} />
+        <Stack.Screen name="project/detail" options={{ headerTitle: 'Detail' }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
